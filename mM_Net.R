@@ -22,7 +22,7 @@ cat("Running mM_Net.R with arguments:",fmRNA,fmiRNA,fmRNADE,fmiRNADE,fANN,title,
 
 cat("Loading MirTarBase...")
 #mirtarbase
-mirdb1<-read.table(pipe("zcat mirtarbase-hsa.ok.txt"),sep="\t",quote="")
+mirdb1<-read.table(pipe("zcat test/mirtarbase-hsa.ok.txt"),sep="\t",quote="")
 m<-gsub("-5p","",mirdb1$V2)
 m<-gsub("-3p","",m)
 mirdb1[,2]<-m
@@ -31,7 +31,7 @@ cat(length(mtb_mix),"records\n")
 
 cat("Loading PITA...")
 #pita
-mirdb3<-read.table(pipe("zcat PITA_targets_hg18_3_15_TOP.tab.gz | cut -f2,3 | sort | uniq"),sep="\t",quote="")
+mirdb3<-read.table(pipe("zcat test/PITA_targets_hg18_3_15_TOP.tab.gz | cut -f2,3 | sort | uniq"),sep="\t",quote="")
 m<-gsub("-5p","",mirdb3$V2)
 m<-gsub("-3p","",m)
 pita_mix<-unique(paste(mirdb3$V1,m,sep="@"))
