@@ -11,8 +11,8 @@ title<-args[6]
 
 #comment the following lines to run your data
 #the following linea are for test data only
-fmRNA <- "test/mRNA.data"
-fmiRNA <- "test/miRNA.data"
+fmRNA <- "test/mrna.data"
+fmiRNA <- "test/mirna.data"
 fANN <- "test/Mannot.txt"
 fmRNADE <- "test/mrna.de.txt"
 fmiRNADE <- "test/mirna.de.txt"
@@ -175,12 +175,12 @@ vlcol[grep("miR-23b",as_ids(V(net)))]<-"black"
 vlcol[grep("SLC",as_ids(V(net)))]<-"black"
 
 nodesize<-rep(5,length(as_ids(V(net))))
-nodesize[grep("miR-23b",as_ids(V(net)))]<-15
-nodesize[grep("SLC6A14",as_ids(V(net)))]<-15
+#nodesize[grep("miR-23b",as_ids(V(net)))]<-15
+#nodesize[grep("SLC6A14",as_ids(V(net)))]<-15
 
 nodelabelsize<-rep(0.7,length(as_ids(V(net))))
-nodelabelsize[grep("miR-23b",as_ids(V(net)))]<-1.2
-nodelabelsize[grep("SLC6A14",as_ids(V(net)))]<-1.2
+#nodelabelsize[grep("miR-23b",as_ids(V(net)))]<-1.2
+#nodelabelsize[grep("SLC6A14",as_ids(V(net)))]<-1.2
 
 
 pdf(file=paste(title,"network.pdf",sep="."),width=10,height=10)
