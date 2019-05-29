@@ -1,10 +1,6 @@
-#!/home/matteo/Desktop/R-3.4.2/bin/R
+#!/usr/bin/R
+#(c) Matteo Ramazzotti - matteo.ramazzotti_at_unifi.it
 args = commandArgs(trailingOnly=TRUE)
-#eval(parse(text=paste(commandArgs(trailingOnly = TRUE), collapse=";")))
-
-#for(i in 1:length(args)){
-#	eval(parse(text=args[[i]]))
-#}
 
 fmRNA <- args[1]
 fmiRNA <- args[2]
@@ -13,22 +9,16 @@ fmiRNADE <- args[4]
 fANN <- args[5]
 title<-args[6]
 
-#done: Th1p_stim(none),Th1n_stim(ok),Th2_stim(none),Th17_stim(ok),
-#xM_u_Th17_vs_Th2.de.txt
-#xM_u_Th1n_vs_Th17.de.txt (no signif.nrel)
-#xM_u_Th1n_vs_Th1p.de.txt (no mirDE)
-#xxM_u_Th1n_vs_Th2.de.txt (1 rel no net, no Mde)
-#xxM_u_Th1p_vs_Th17.de.txt (6 rel)
-#xxM_u_Th1p_vs_Th2.de.txt (7 rel)
+#comment the following lines to run your data
+#the following linea are for test data only
+fmRNA <- "test/mRNA.data"
+fmiRNA <- "test/miRNA.data"
+fANN <- "test/Mannot.txt"
+fmRNADE <- "test/mrna.de.txt"
+fmiRNADE <- "test/mirna.de.txt"
+title<- "example"
 
-#fmRNA <- "mRNA.data"
-#fmiRNA <- "miRNA.data"
-#fANN <- "Mannot.txt"
-#fmRNADE <- "G_s_Th1n_vs_Th1p.de.txt"
-#fmiRNADE <- "M_s_Th1n_vs_Th1p.de.txt"
-#title<- "s_Th1n_vs_Th1p"
-
-cat("Running mM_network.R with arguments:",fmRNA,fmiRNA,fmRNADE,fmiRNADE,fANN,title,"\n",sep="\n");
+cat("Running mM_Net.R with arguments:",fmRNA,fmiRNA,fmRNADE,fmiRNADE,fANN,title,"\n",sep="\n");
 
 cat("Loading MirTarBase...")
 #mirtarbase
